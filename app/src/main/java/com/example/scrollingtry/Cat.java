@@ -2,10 +2,10 @@ package com.example.scrollingtry;
 
 public class Cat {
     String name;
-    String color;
-    String gender;
+    int color;
+    boolean gender;
 
-    public Cat(String name, String color, String gender) {
+    public Cat(String name, int color, Boolean gender) {
         this.name = name;
         this.color = color;
         this.gender = gender;
