@@ -1,10 +1,8 @@
 package com.example.scrollingtry;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    ArrayList<Cat> data;
+    ArrayList<Party> data;
 
-    MyAdapter(ArrayList<Cat> data) {
+    MyAdapter(ArrayList<Party> data) {
         this.data = data;
     }
 
@@ -25,7 +23,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public MyAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_cat, parent, false);
+                .inflate(R.layout.item_party, parent, false);
 
         return new MyViewHolder(view);
     }
@@ -44,22 +42,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView catNameTextView;
-        ImageView catColorImageView;
-        CheckBox catGenderCheckBox;
+        TextView partyNameTextView;
+        ImageButton PartyView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            catNameTextView = itemView.findViewById(R.id.textView);
-            catColorImageView = itemView.findViewById(R.id.colorView);
-            catGenderCheckBox = itemView.findViewById(R.id.checkBox);
+            partyNameTextView = itemView.findViewById(R.id.textView);
+            PartyView = itemView.findViewById(R.id.buttonParty);
         }
 
-        public void bind(Cat cat) {
-            catGenderCheckBox.setChecked(cat.gender);
-            catNameTextView.setText(cat.name);
-            catColorImageView.setColorFilter(cat.color);
+        public void bind(Party party) {
+           partyNameTextView.setText(party.name);
         }
     }
 }
